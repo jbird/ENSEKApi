@@ -22,9 +22,13 @@ public class MeterReadingController(ILogger<MeterReadingController> logger, IMed
 
         var result = await _mediator.Send(new MeterReadingsUpdateCommand(file));
 
+        var message = result.SuccessfulReadings > 0
+            ? "Meter readings uploaded successfully."
+            : "Failed to upload meter readings.";
+
         return Ok(new
         {
-            Message = "Meter readings uploaded successfully.",
+            Message = message,
             result.SuccessfulReadings,
             result.FailedReadings
         });
