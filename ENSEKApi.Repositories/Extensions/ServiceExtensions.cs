@@ -1,5 +1,4 @@
 ﻿using ENSEKApi.Domain.Interfaces;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ENSEKApi.Repositories.Extensions;

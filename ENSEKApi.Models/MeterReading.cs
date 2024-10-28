@@ -1,6 +1,4 @@
-﻿using CsvHelper.Configuration.Attributes;
-
-namespace ENSEKApi.Models;
+﻿namespace ENSEKApi.Models;
 
 public class MeterReading
 {

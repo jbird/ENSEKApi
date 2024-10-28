@@ -1,13 +1,7 @@
-﻿using ENSEKApi.Application;
-using ENSEKApi.Domain.Interfaces;
-using ENSEKApi.Infrastructure.SqlServer;
-using ENSEKApi.Repositories;
-using ENSEKApi.Services;
-using MediatR;
+﻿using ENSEKApi.Infrastructure.SqlServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
 
 namespace ENSEKApi.Infrastructure.Extensions;
 
