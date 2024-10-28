@@ -1,7 +1,6 @@
 ﻿using System.Data;
 using System.Reflection;
 
-
 namespace ENSEKApi.Services.Helpers;
 
 public static class DataTableHelper

@@ -6,10 +6,9 @@ using ENSEKApi.Repositories.Extensions;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddInfrastructure(builder.Configuration);
-builder.Services.AddServices(builder.Configuration);
-builder.Services.AddRepositories(builder.Configuration); // This line requires the correct using directive
+builder.Services.AddServices();
+builder.Services.AddRepositories();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<MeterReadingsUpdateCommandHandler>());
 
 builder.Services.AddControllers();

@@ -6,7 +6,7 @@ namespace ENSEKApi.Repositories.Extensions;
 
 public static class ServiceExtensions
 {
-    public static IServiceCollection AddRepositories(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddRepositories(this IServiceCollection services)
     {
         services.AddScoped<IAccountRepository, AccountRepository>();
         services.AddScoped<IMeterReadingRepository, MeterReadingRepository>();
