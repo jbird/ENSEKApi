@@ -4,11 +4,11 @@ using Microsoft.Extensions.Logging;
 
 namespace ENSEKApi.Services;
 
-public class MeterReadingService(ILogger<MeterReadingService> logger, IMeterReadingRepository meterReadingRepository, MeterReadingValidatorService validatorService) : IMeterReadingService
+public class MeterReadingService(ILogger<MeterReadingService> logger, IMeterReadingRepository meterReadingRepository, IMeterReadingValidatorService validatorService) : IMeterReadingService
 {
     private readonly ILogger<MeterReadingService> _logger = logger;
     private readonly IMeterReadingRepository _meterReadingRepository = meterReadingRepository;
-    private readonly MeterReadingValidatorService _validatorService = validatorService;
+    private readonly IMeterReadingValidatorService _validatorService = validatorService;
 
     public async Task<MeterReadingUpdateResult> AddAsync(MeterReadingCsv meterReadingCsv)
     {

@@ -4,7 +4,7 @@ using ENSEKApi.Services.Validators;
 
 namespace ENSEKApi.Services;
 
-public partial class MeterReadingValidatorService(IMeterReadingRepository meterReadingRepo, IAccountRepository accountRepository)
+public partial class MeterReadingValidatorService(IMeterReadingRepository meterReadingRepo, IAccountRepository accountRepository) : IMeterReadingValidatorService
 {
     private readonly IMeterReadingRepository _meterReadingRepository = meterReadingRepo;
     private readonly IAccountRepository _accountRepository = accountRepository;
