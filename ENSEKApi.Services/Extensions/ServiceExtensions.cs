@@ -8,7 +8,7 @@ public static class ServiceExtensions
     public static IServiceCollection AddServices(this IServiceCollection services)
     {
         services.AddTransient<IMeterReadingService, MeterReadingService>();
-        services.AddScoped<MeterReadingValidatorService>();
+        services.AddScoped<IMeterReadingValidatorService, MeterReadingValidatorService>();
 
         return services;
     }
