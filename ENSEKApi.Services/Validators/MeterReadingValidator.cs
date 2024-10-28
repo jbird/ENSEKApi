@@ -18,5 +18,17 @@ public class MeterReadingValidator : AbstractValidator<MeterReading>
         RuleFor(reading => reading.AccountId)
             .Must(accountId => accountIds.Contains(accountId))
             .WithMessage("Invalid Account ID");
+
+        RuleFor(reading => reading)
+            .Must(reading =>
+            {
+                var existingReading = existingReadings
+                    .Where(r => r.AccountId == reading.AccountId)
+                    .OrderByDescending(r => r.ReadingDateTime)
+                    .FirstOrDefault();
+
+                return existingReading == null || reading.ReadingDateTime > existingReading.ReadingDateTime;
+            })
+            .WithMessage("New reading must be newer than the existing reading for the account");
     }
 }
